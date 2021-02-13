@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Backend - Sistrel / Workflow CI
+name: Backend - Sistrel / CI
 
 on:
   push:
@@ -33,3 +33,12 @@ jobs:
     
     - name: Run all tests
       run: yarn test:e2e
+
+    - shell: bash
+      name: Create SSH deployment key
+      env: 
+        SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: ./scripts/deploy.sh
+
+    - name: Deployment
+      run: git remote add umbler https://kamino.deploy.umbler.com/j5r0qg5k/backend-sistrel-com-br.git && git push umbler master
