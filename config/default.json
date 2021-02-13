@@ -1,0 +1,27 @@
+{
+  "App": {
+    "env": "development",
+    "port": 3000,
+    "logger": {
+      "enabled": true,
+      "level": "info",
+      "prettyPrint": {
+        "levelFirst": true,
+        "colorize": true
+      }
+    },
+    "db": {
+      "type": "mysql",
+      "host": "mysql742.umbler.com",
+      "port": 41890,
+      "username": "sistrel",
+      "password": "M]D.4dnAt8",
+      "database": "sistrel"
+    },
+    "email": {
+      "port": 587,
+      "admin": "admin@sistrel.com.br",
+      "cc": "rafael@sistrel.com.br"
+    }
+  }
+}

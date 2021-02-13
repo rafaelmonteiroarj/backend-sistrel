@@ -1,0 +1,12 @@
+node_modules/
+build/
+project/
+
+package-lock*
+yarn.lock*
+yarn-error.log*
+coverage/*
+tmp/*
+.env*
+!tmp/.gitkeep
+src/playground.ts

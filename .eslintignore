@@ -1,0 +1,12 @@
+db.development.sqlite
+yarn-debug.log*
+yarn-error.log*
+yarn.lock*
+package-lock*
+/env*
+/node_modules
+/docs
+/build
+/test/coverage
+/test/jest.config.js
+/src/@types*

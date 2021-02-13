@@ -1,0 +1,69 @@
+// Há três modos para uma regra no eslint: off, warn, e error.
+// "off" significa 0 (desativa a regra completamente)
+// "warn" significa 1 (ativa a regra, mas não faz com que o linter falhe).
+// "error" significa 2 (ativa a regra e faz com que o linter falhe)
+
+{
+    "env": {
+        "node": true,
+        "es2020": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint", /* Usa eslint-config-prettier para desativar as regras ESLint do @ typescript-eslint / eslint-plugin que entrariam em conflito com o mais bonito */
+        "plugin:prettier/recommended", /* Ativa eslint-plugin-prettier e eslint-config-prettier. Isso exibirá erros mais bonitos como erros do ESLint. Verifique se essa é sempre a última configuração na matriz extends. */
+        "plugin:import/errors",
+        "plugin:import/warnings"
+    ],
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "import"
+    ],
+    "rules": {
+        "indent": ["error", 2], /* especifique se crases, aspas duplas ou simples devem ser usadas */
+        "quotes": [0, "prefer-single"], /* especifique a largura da tabulação ou do espaço para seu código */ 
+        "linebreak-style": 0 /** aplicar um estilo de quebra de linha consistente (estilo de quebra de linha) */,
+        "semi-spacing": 2 /* impor espaçamento consistente antes e depois de ponto e vírgula */,
+        "semi-style": 2 /* impor a localização de ponto e vírgula */,
+        "no-dupe-args": 2 /* não permitir argumentos duplicados nas function definições */,
+        "default-case": 2 /* requer casos padrão nas instruções do switch */,
+        "no-multi-spaces": 2 /* proibir vários espaços */,
+        "no-undef-init": 2 /* não permitir que variáveis de inicialização sejam indefinidas */,
+        // "no-unused-vars": 1,
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "no-use-before-define": 2 /* proibir o uso de variáveis antes que elas sejam definidas */,
+        "array-bracket-newline": 2 /* aplicar quebras de linha após abrir e antes de fechar colchetes de matriz */,
+        "array-bracket-spacing": 2 /* impor espaçamento consistente entre colchetes da matriz */,
+        "comma-spacing": 2 /* impor espaçamento consistente antes e depois de vírgulas */,
+        "no-multiple-empty-lines": 2 /* proibir várias linhas vazias */,
+        "arrow-spacing": 2 /* aplicar espaçamento consistente antes e depois da seta nas funções de seta */,
+        "prefer-const": 2 /* requerem declarações const para variáveis que nunca são reatribuídas depois de declaradas */,
+        "@typescript-eslint/explicit-function-return-type": 0 /* Exigir tipos de retorno explícitos em funções e métodos de classe */,
+        "@typescript-eslint/no-explicit-any": 0 /** Não permitir o uso do anytipo ( no-explicit-any) */,
+        "@typescript-eslint/no-var-requires": 0 /** Exigir ou proibir um espaço antes do parêntese da função (espaço antes da função parêntese) */,
+        "space-before-function-paren": 0, /** Exigir ou proibir um espaço antes do parêntese da função (espaço antes da função parêntese) */
+
+        "import/no-unresolved": [2, {"commonjs": true, "amd": true}],
+        "import/named": 2,
+        "import/namespace": 2,
+        "import/default": 2,
+        "import/export": 2,
+        "@typescript-eslint/explicit-module-boundary-types": ["off", {
+            "allowArgumentsExplicitlyTypedAsAny": false
+        }],
+        "no-invalid-this": "off",
+        "@typescript-eslint/no-invalid-this": ["error"]
+    }
+}
