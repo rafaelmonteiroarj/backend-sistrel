@@ -92,7 +92,7 @@ const sendEmail = ({
   );
 
   const mailOptions = {
-    to: `${config.get("App.email.admin")}`,
+    to: `${config.get("App.email.to")}`,
     from: `${config.get("App.email.admin")}`,
     cc: `${config.get("App.email.cc")}`,
     subject,
