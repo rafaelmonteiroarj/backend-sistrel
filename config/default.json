@@ -21,6 +21,7 @@
     "email": {
       "port": 587,
       "admin": "admin@sistrel.com.br",
+      "to": "comercial@sistrel.com.br",
       "cc": "leandro@sistrel.com.br"
     }
   }
